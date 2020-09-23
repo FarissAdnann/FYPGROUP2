@@ -7,7 +7,7 @@
         <th>Gender</th>
         <th>S.No</th>
         <th>Date</th>
-        <th>Department</th>
+        <th>Class</th>
       </tr>
     </thead>
     <tbody class="table-secondary">
