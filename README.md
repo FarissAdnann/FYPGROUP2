@@ -8,6 +8,6 @@ OBJEKTIF YANG BELUM DICAPAI
 - to generate student attendance report
 
 AHLI GROUP
-- Faris (subfolder Faris) ada Report demo 1,proposal,Presentation1,Interface_FYP
-- Zihny (subfolder zihny) ada subfolder NodeMCU_RC522_Mysql
-- An noor (subfolder an noor) ada subfolder Web RFID Attendance
+- Faris (subfolder Laporan)
+- Zihny (subfolder Arduino)
+- An noor (subfolder Web)
