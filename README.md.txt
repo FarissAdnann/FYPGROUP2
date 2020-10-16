@@ -8,6 +8,6 @@ OBJEKTIF YANG BELUM DICAPAI
 - to generate student attendance report
 
 AHLI GROUP
--faris
--zihny
--an noor
+-faris (subfolder faris)
+-zihny (subfolder zihny)
+-an noor (subfolder an noor)

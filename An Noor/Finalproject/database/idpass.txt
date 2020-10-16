@@ -1,0 +1,5 @@
+id=admin
+pass=admin
+
+id=rokiah@gmail.com
+pass=1234
