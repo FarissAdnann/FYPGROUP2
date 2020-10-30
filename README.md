@@ -12,6 +12,6 @@ AHLI GROUP
 - Zihny (subfolder Arduino)
 - An noor (subfolder Web)
 
-Objektif Pertama : 25/9/2020
+Objektif Pertama : 21/9/2020
 Objektif Kedua : 28/10/2020
-Objektif Ketiga : 20/11/2020
+Objektif Ketiga : 18/11/2020
