@@ -65,15 +65,12 @@
 	<body>
 		<img src="head-logo.png" alt="" style="width:35%;">
 		<ul class="topnav">
-			<li><a class="active"href="home.php">Home</a></li>
-			<li><a href="user data.php">Students Info</a></li>
-			<li><a href="registration.php">Registration</a></li>
-			<li><a href="teacher.php">Teacher</a></li>
-			<li><a href="attendance.php">Attendance</a></li>
+			<li><a class="active"href="hometeacher.php">Home</a></li>
+			<li><a href="studentdata.php">Students Info</a></li>
+			<li><a href="attendancetch.php">Attendance</a></li>
 			<li style="float:right"><a href="logout.php">Log Out</a></li>
 		</ul>
 		<br>
-		<h2>Hi, Admin</h2>
 		<h3>Welcome to School Attendance System Using RFID</h3>
 		
 		<img src="logo.jpg" alt="" style="width:10%;">

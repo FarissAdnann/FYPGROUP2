@@ -71,11 +71,9 @@
 	<body>
 		<img src="head-logo.png" alt="" style="width:35%;">
 		<ul class="topnav">
-			<li><a href="home.php">Home</a></li>
-			<li><a class="active" href="user data.php">Students Info</a></li>
-			<li><a href="registration.php">Registration</a></li>
-			<li><a href="teacher.php">Teacher</a></li>
-			<li><a href="attendance.php">Attendance</a></li>
+			<li><a href="hometeacher.php">Home</a></li>
+			<li><a class="active" href="studentdata.php">Students Info</a></li>
+			<li><a href="attendancetch.php">Attendance</a></li>
 			<li style="float:right"><a href="logout.php">Log Out</a></li>
 		</ul>
 		<br>
@@ -107,9 +105,9 @@
                             echo '<td>'. $row['gender'] . '</td>';
 							echo '<td>'. $row['email'] . '</td>';
 							echo '<td>'. $row['mobile'] . '</td>';
-							echo '<td><a class="btn btn-success" href="user data edit page.php?id='.$row['id'].'">Edit</a>';
+							echo '<td><a class="btn btn-success" href="studentdataeditpage.php?id='.$row['id'].'">Edit</a>';
 							echo ' ';
-							echo '<a class="btn btn-danger" href="user data delete page.php?id='.$row['id'].'">Delete</a>';
+							echo '<a class="btn btn-danger" href="studentdatadeletepage.php?id='.$row['id'].'">Delete</a>';
 							echo '</td>';
                             echo '</tr>';
                    }

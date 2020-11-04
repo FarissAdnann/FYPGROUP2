@@ -4,6 +4,7 @@
 ?>
 
 <!DOCTYPE html>
+<html lang="en">
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,10 @@
 		<script>
 			$(document).ready(function(){
 				 $("#getUID").load("UIDContainer.php");
+				// $("#norfid").val($("#getUID").text);
 				setInterval(function() {
 					$("#getUID").load("UIDContainer.php");	
+				//	$("#norfid").val($("#getUID").text);
 				}, 500);
 			});
 		</script>
@@ -57,18 +60,30 @@
 			ul.topnav li {float: none;}
 		}
 		
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		body{
+			background-color:#bdd2f2;
+		}
+		tr:nth-child(even) {
+        background-color: #ffffff;
+       }
+	   thead {
+			color: #FFFFFF;
+		}
 		td.lf {
 			padding-left: 15px;
 			padding-top: 12px;
 			padding-bottom: 12px;
 		}
-		body{
-			background-color:#bdd2f2;
-		}
 		</style>
 		
-		<title>Read Tag</title>
+		<title>Attendance</title>
 	</head>
+	
 	
 	<body>
 		<img align="center" src="head-logo.png" alt="" style="width:35%;">
@@ -76,15 +91,12 @@
 			<li><a href="home.php">Home</a></li>
 			<li><a href="user data.php">Students Info</a></li>
 			<li><a href="registration.php">Registration</a></li>
-			<li><a class="active" href="read tag.php">Read Tag ID</a></li>
 			<li><a href="teacher.php">Teacher</a></li>
-			<li><a href="attendance.php">Attendance</a></li>
+			<li><a class="active" href="attendance.php">Attendance</a></li>
 			<li style="float:right"><a href="logout.php">Log Out</a></li>
 		</ul>
-		
 		<br>
-		
-		<h3 align="center">Please Tag to Display ID or Students info</h3>
+		<h3 align="center" >Tag RFID to view Students Attendance</h3>
 		
 		<p id="getUID" hidden></p>
 		
@@ -95,7 +107,7 @@
 				<table  width="452" border="1" bordercolor="#10a0c5" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
 					<tr>
 						<td  height="40" align="center"  bgcolor="#10a0c5"><font  color="#FFFFFF">
-							<b>Students Info</b>
+							<b>Student Info</b>
 							</font>
 						</td>
 					</tr>
@@ -107,7 +119,7 @@
 									<td style="font-weight:bold">:</td>
 									<td align="left">--------</td>
 								</tr>
-								<tr bgcolor="#f2f2f2">
+								<tr bgcolor="#DADADA">
 									<td align="left" class="lf">Name</td>
 									<td style="font-weight:bold">:</td>
 									<td align="left">--------</td>
@@ -117,7 +129,7 @@
 									<td style="font-weight:bold">:</td>
 									<td align="left">--------</td>
 								</tr>
-								<tr bgcolor="#f2f2f2">
+								<tr bgcolor="#DADADA">
 									<td align="left" class="lf">Class</td>
 									<td style="font-weight:bold">:</td>
 									<td align="left">--------</td>
@@ -127,6 +139,7 @@
 									<td style="font-weight:bold">:</td>
 									<td align="left">--------</td>
 								</tr>
+								
 							</table>
 						</td>
 					</tr>
@@ -175,7 +188,7 @@
 							document.getElementById("show_user_data").innerHTML = this.responseText;
 						}
 					};
-					xmlhttp.open("GET","read tag user data.php?id="+str,true);
+					xmlhttp.open("GET","readtagattendance.php?id="+str,true);
 					xmlhttp.send();
 				}
 			}
@@ -185,5 +198,57 @@
 				blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
 			}, 750); 
 		</script>
+		<br>		
+		<div class="container">
+            <div class="row">
+                <h3>Attendance</h3>
+            </div>
+			
+			<p id="getUID" ></p>
+			
+			
+            <div class="row">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr bgcolor="#10a0c5" color="#FFFFFF">
+					  <th>Name</th>
+                      <th>ID</th>
+                      <th>Gender</th>
+					  <th>Class</th>
+					  <th>IC Number</th>
+                      <th>Date</th>
+					  <th>Time</th>
+					  
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                   include 'database.php';
+                   $pdo = Database::connect();
+                   $sql = 'SELECT * FROM attendance 
+							JOIN table_nodemcu_rfidrc522_mysql ON attendance.idstudent = table_nodemcu_rfidrc522_mysql.idstudent
+							ORDER BY name ASC';
+                   foreach ($pdo->query($sql) as $row) {
+                            echo '<tr>';
+							echo '<td>'. $row['name'] . '</td>';
+                            echo '<td>'. $row['id'] . '</td>';
+                            echo '<td>'. $row['gender'] . '</td>';
+                            echo '<td>'. $row['email'] . '</td>';
+							echo '<td>'. $row['mobile'] . '</td>';
+							echo '<td>'. $row['date'] . '</td>';
+							echo '<td>'. $row['time'] . '</td>';
+							echo '</td>';
+                            echo '</tr>';
+                   }
+                   Database::disconnect();
+                  ?>
+                  </tbody>
+				</table>
+			</div>
+		</div> <!-- /container -->
+		
+	</body>
+</html>
+		
 	</body>
 </html>
