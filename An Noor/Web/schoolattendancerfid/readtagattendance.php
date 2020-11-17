@@ -79,7 +79,7 @@
 									<td align="left"><?php echo $data['mobile'];?></td>
 								</tr>
 								<tr>
-									<td><center><button type="submit" class="btn btn-success">Save</button></center>
+									<td><center><button type="submit" class="btn btn-success">Loading...</button></center>
 									</td>
 								</tr>
 					

@@ -64,7 +64,7 @@
 			ul.topnav li {float: none;}
 		}
 		body{
-			background-color:#bdd2f2;
+			background-color:#d7bdf2;
 		}
 		</style>
 		

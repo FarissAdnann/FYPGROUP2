@@ -88,9 +88,11 @@
 	<body>
 		<img align="center" src="head-logo.png" alt="" style="width:35%;">
 		<ul class="topnav">
-			<li><a href="hometeacher.php">Home</a></li>
-			<li><a href="studentdata.php">Students Info</a></li>
-			<li><a class="active" href="attendancetch.php">Attendance</a></li>
+			<li><a href="home.php">Home</a></li>
+			<li><a href="user data.php">Students Info</a></li>
+			<li><a href="registration.php">Registration</a></li>
+			<li><a href="teacher.php">Teacher</a></li>
+			<li><a class="active" href="attendance.php">Attendance</a></li>
 			<li style="float:right"><a href="logout.php">Log Out</a></li>
 		</ul>
 		<br>
@@ -102,9 +104,9 @@
 		
 		<div id="show_user_data">
 			<form>
-				<table  width="452" border="1" bordercolor="#10a0c5" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
+				<table  width="452" border="1" bordercolor="#ffffff" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
 					<tr>
-						<td  height="40" align="center"  bgcolor="#10a0c5"><font  color="#FFFFFF">
+						<td  height="40" align="center"  bgcolor="#10c567"><font  color="#FFFFFF">
 							<b>Student Info</b>
 							</font>
 						</td>
@@ -186,7 +188,7 @@
 							document.getElementById("show_user_data").innerHTML = this.responseText;
 						}
 					};
-					xmlhttp.open("GET","readtagattendancetch.php?id="+str,true);
+					xmlhttp.open("GET","readtagattendance.php?id="+str,true);
 					xmlhttp.send();
 				}
 			}
@@ -208,7 +210,7 @@
             <div class="row">
                 <table class="table table-striped table-bordered">
                   <thead>
-                    <tr bgcolor="#10a0c5" color="#FFFFFF">
+                    <tr bgcolor="#10c567" color="#FFFFFF">
 					  <th>Name</th>
                       <th>ID</th>
                       <th>Gender</th>

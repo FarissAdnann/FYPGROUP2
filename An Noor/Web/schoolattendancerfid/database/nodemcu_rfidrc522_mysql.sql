@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2020 at 05:52 AM
+-- Generation Time: Nov 16, 2020 at 01:15 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -54,14 +54,6 @@ CREATE TABLE `attendance` (
   `time` time(5) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `attendance`
---
-
-INSERT INTO `attendance` (`idattendance`, `idstudent`, `date`, `time`) VALUES
-(6, '1', '2020-11-04', '12:42:00.00000'),
-(7, '5', '2020-11-04', '12:49:00.00000');
-
 -- --------------------------------------------------------
 
 --
@@ -77,14 +69,6 @@ CREATE TABLE `table_nodemcu_rfidrc522_mysql` (
   `mobile` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `table_nodemcu_rfidrc522_mysql`
---
-
-INSERT INTO `table_nodemcu_rfidrc522_mysql` (`idstudent`, `name`, `id`, `gender`, `email`, `mobile`) VALUES
-(1, 'An Noor ', '1233', 'Male', '3 Jacky', '980830095050'),
-(5, 'maziah manat', '14124', 'Male', '1 Anjir', '000320095443');
-
 -- --------------------------------------------------------
 
 --
@@ -96,17 +80,19 @@ CREATE TABLE `teacher` (
   `username` varchar(50) NOT NULL,
   `password` varchar(500) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `class` varchar(50) NOT NULL
+  `class` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`id`, `username`, `password`, `name`, `class`) VALUES
-(2, 'maziah95', '12347', 'maziah manat', '4 cemet'),
-(4, 'azmiah46', '12345', 'Azmiah', '3 Bijak'),
-(5, 'sabri46', '1234', 'Sabri Saep', '5 Angerik');
+INSERT INTO `teacher` (`id`, `username`, `password`, `name`, `class`, `phone`) VALUES
+(1, 'aerina@gmail.com', '880225045174', 'Aerina Fazlin Binti Arjunaidi', '3 Wawasan', '0174367892'),
+(2, 'rizal@gmail.com', '860820095081', 'Ahmad Rizal Bin Hamid', '3 Pintar', '0174367888'),
+(3, 'aishah@gmail.com', '890424075373', 'Aishah Binti Sari', '3 Bijaksana', '0174367876'),
+(4, 'azmiah@gmail.com', '$2y$10$89uX3LBy4mlU/DcBveQ1l.32nSianDP/E1MfUh.Z.6B4Z0ql3y7PK', 'Azmiah Binti Aziz', '3 Ungul', '0129580072');
 
 --
 -- Indexes for dumped tables
@@ -150,19 +136,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `idattendance` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idattendance` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `table_nodemcu_rfidrc522_mysql`
 --
 ALTER TABLE `table_nodemcu_rfidrc522_mysql`
-  MODIFY `idstudent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idstudent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -66,7 +66,7 @@
 		}
 		</style>
 		
-		<title>Registration</title>
+		<title>Teacher</title>
 	</head>
 	
 	<body>
@@ -75,8 +75,8 @@
 		<ul class="topnav">
 			<li><a href="home.php">Home</a></li>
 			<li><a href="user data.php">Students Info</a></li>
-			<li><a class="active" href="registration.php">Registration</a></li>
-			<li><a href="teacher.php">Teacher</a></li>
+			<li><a href="registration.php">Registration</a></li>
+			<li><a class="active" href="teacher.php">Teacher</a></li>
 			<li><a href="attendance.php">Attendance</a></li>
 			<li style="float:right"><a href="logout.php">Log Out</a></li>
 		</ul>
@@ -85,45 +85,43 @@
 			<br>
 			<div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
 				<div class="row">
-					<h3 align="center">Registration Form</h3>
+					<h3 align="center">Registration Teacher</h3>
 				</div>
 				<br>
-				<form class="form-horizontal" action="insertDB.php" method="post" >
+				<form class="form-horizontal" action="insertDBteacher.php" method="post" >
+					
 					<div class="control-group">
-						<label class="control-label">ID</label>
+						<label class="control-label">Username</label>
 						<div class="controls">
-							<textarea name="id" id="getUID" placeholder="Please Tag your Card / Key Chain to display ID" rows="1" cols="1" required></textarea>
+							<input id="div_refresh" name="username" type="text"  placeholder="" required>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Password</label>
+						<div class="controls">
+							<input id="div_refresh" name="password" type="password"  placeholder="" required>
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label">Name</label>
 						<div class="controls">
-							<input id="div_refresh" name="name" type="text"  placeholder="" required>
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">Gender</label>
-						<div class="controls">
-							<select name="gender">
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
-							</select>
+							<input name="name" type="text" placeholder="" required>
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label">Class</label>
 						<div class="controls">
-							<input name="email" type="text" placeholder="" required>
+							<input name="class" type="text"  placeholder="" required>
 						</div>
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label">IC Number</label>
+						<label class="control-label">Phone Number</label>
 						<div class="controls">
-							<input name="mobile" type="text"  placeholder="" required>
+							<input name="phone" type="text"  placeholder="" required>
 						</div>
 					</div>
 					
@@ -134,5 +132,7 @@
 				
 			</div>               
 		</div> <!-- /container -->	
+		<br>
+		<center><a class="btn" href="teacherdata.php">Teacher Info</a></center>
 	</body>
 </html>

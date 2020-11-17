@@ -34,7 +34,7 @@ require_once("database.php");
 			}
 			else
 			{
-				$query = "SELECT * FROM users WHERE username='".$Uname."'";
+				$query = "SELECT * FROM teacher WHERE username='".$Uname."'";
 				$tbl = mysqli_query($connect,$query);
 				if(mysqli_num_rows($tbl)>0){
 				
@@ -42,7 +42,7 @@ require_once("database.php");
 					$password_hash = $row['password'];
 					if(password_verify($password,$password_hash))
 					{
-						header("Location: parentsinfo.php?idpelajar=".$row['idpelajar']);
+						header("Location: hometeacher.php?id=".$row['id']);
 					}
 					else
 					{

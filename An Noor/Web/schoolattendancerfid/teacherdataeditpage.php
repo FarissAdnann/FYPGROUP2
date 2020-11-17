@@ -114,6 +114,13 @@
 						</div>
 					</div>
 					
+					<div class="control-group">
+						<label class="control-label">Phone Number</label>
+						<div class="controls">
+							<input name="phone" type="text"  placeholder="" value="<?php echo $data['phone'];?>" required>
+						</div>
+					</div>
+					
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Update</button>
 						<a class="btn" href="teacherdata.php">Back</a>
