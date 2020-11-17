@@ -16,5 +16,5 @@ Objektif Pertama : 21/9/2020
 Objektif Kedua : 28/10/2020
 Objektif Ketiga : 18/11/2020
 
-Video Presentation Project Youtube Video link
+Video Project Presentation Youtube Video link
 https://www.youtube.com/watch?v=cpaEYdrc_QU
